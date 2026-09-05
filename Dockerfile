@@ -1,6 +1,5 @@
 FROM node:24-alpine AS builder
 WORKDIR /app
-ENV NODE_ENV=production
 
 RUN apk add --no-cache --virtual .build-deps python3 make g++ git
 
