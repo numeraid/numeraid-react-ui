@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: numeraid-react-ui-service
+  namespace: numeraid
+spec:
+  selector:
+    app: numeraid-react-ui-deployment
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP

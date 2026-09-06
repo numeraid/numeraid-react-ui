@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: numeraid-react-ui-deployment
+  namespace: numeraid
+spec:
+  selector:
+    matchLabels:
+      app: numeraid-react-ui-deployment
+  template:
+    metadata:
+      labels:
+        app: numeraid-react-ui-deployment
+    spec:
+      containers:
+        - name: numeraid-react-ui-deployment
+          image: ghcr.io/numeraid/numeraid-react-ui:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 80
